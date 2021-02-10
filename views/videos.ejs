@@ -1,0 +1,206 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="container" style="margin-top: 20px">
+  <div class="bg-dark">
+    <div class="vl"></div>
+    <p class="title-text" id="first-title">Music</p>
+    <div class="dropdown" id="btn-video">
+      <button
+        class="btn btn-danger dropdown-toggle btn-lg"
+        type="button"
+        id="dropdownMenuButton"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Select
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" onclick="changeMusic()">Music</a></li>
+        <li>
+          <a class="dropdown-item" onclick="changeSpeeches()">Speeches</a>
+        </li>
+        <li><a class="dropdown-item" onclick="changeMovies()">Movies</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="music-container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/pCnEAH5wCzo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/iMewtlmkV6c"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/1y2SIIeqy34"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/VucczIg98Gw"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/rrcDRU75Ctk"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/2_2lGkEU4Xs"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/cvz9uSK3zXo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container hide" id="speeches-container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/tBzSLu3MZ6I"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/w9HZZqJXM-4"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/3fGQ8pF3wYU"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container hide" id="movies-container">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="iframe-container">
+        <iframe
+          width="560"
+          height="315"
+          class="responsive-iframe"
+          src="https://www.youtube.com/embed/B_K6VM9IvA8"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="iframe-container">
+          <iframe
+            width="560"
+            height="315"
+            class="responsive-iframe"
+            src="https://www.youtube.com/embed/_qIBxXLMCL0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/videos.js"></script>
+
+<%- include("partials/footer.ejs") -%>
