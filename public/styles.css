@@ -53,9 +53,21 @@ a:active {
   margin-bottom: 20px !important;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 388px) {
   .card {
-    width: 232px !important;
+    width: 255px !important;
+  }
+}
+
+@media (max-width: 366px) {
+  .card {
+    width: 235px !important;
+  }
+}
+
+@media (max-width: 356px) {
+  .card {
+    width: 225px !important;
   }
 }
 
