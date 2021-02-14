@@ -162,4 +162,12 @@ a:active {
   cursor: pointer !important;
 }
 
-/* Important Information */
+/* logged */
+#logged-text {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
