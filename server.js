@@ -23,7 +23,7 @@ app.use(cookieSession({
   app.use(passport.session());
   
 //Create the database
-mongoose.connect("mongodb+srv://admin-luke:test123@cluster0.twcua.mongodb.net/SolidarityForeverDB", {useUnifiedTopology: true, useNewUrlParser: true});
+mongoose.connect("mongodb+srv://admin-luke:test123@cluster0.twcua.mongodb.net/SolidarityForeverDB?retryWrites=true&w=majority", {useUnifiedTopology: true, useNewUrlParser: true});
 
 const userSchema = new mongoose.Schema({
     googleId: String,
