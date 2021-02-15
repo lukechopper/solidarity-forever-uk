@@ -32,6 +32,15 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
+const messageSchema = new mongoose.Schema({
+  issue: String,
+  userID: String,
+  googleId: String,
+  message: String
+});
+
+const Message = mongoose.model("Message", messageSchema);
+
 // Find or create the User
 passport.use(
     new GoogleStrategy(
@@ -89,6 +98,60 @@ app.get("/videos", function (req, res) {
 app.get("/important-information", function (req, res) {
     res.render("ImportantInformation")
 });
+
+app.get("/magazine", function(req, res){
+  res.render("magazine")
+});
+
+
+app.get("/issue-:issue", function(req, res){
+//This converts the parameter to a number for the next step
+let issueNum = parseInt(req.params.issue);
+
+// Check to see if the issue they are trying to access has actually been created or not
+if(issueNum === 1){
+  // This finds messages in the database that correspond to the specified issue
+  Message.find({issue: req.params.issue}, function(err, messages){
+    if(!err){
+      //Reverse the array of returned messages so the newest messages appear first
+      let reversedMessages = messages.reverse();
+      res.render("issue", {issue: req.params.issue, isLogged: req.user, correctMessages: reversedMessages});
+    }else{
+      console.log(err)
+    }
+  });
+}else{
+  res.status(404).send("Error 404. Not Found.");
+}
+
+});
+
+
+// This is when the user posts a new message
+app.post("/issue-:issue", function(req, res){
+  const message = new Message({
+    issue: req.params.issue,
+    userID: getUserFromEmail(req.user.userEmail),
+    googleId: req.user.googleId,
+    message: req.body.theMessage
+  }).save();
+
+  res.redirect("/issue-" + req.params.issue);
+});
+
+//This is when the user chooses to delete their message
+app.post("/delete-:issue", function(req, res){
+
+  Message.findByIdAndDelete(req.body.messageToDeleteId, function(err){
+    if(err){
+      console.log(err);
+    }
+  });
+
+  res.redirect("/issue-" + req.params.issue);
+});
+
+
 
 //OAuth
 let justLoggedOut = false;

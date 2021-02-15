@@ -171,3 +171,73 @@ a:active {
   transform: translate(-50%, -50%);
   font-size: 40px;
 }
+
+/* Magazine */
+.magazine-text {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+@media (max-width: 1399px) {
+  .magazine-text {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .magazine-text {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  .magazine-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .magazine-text {
+    font-size: 50px;
+  }
+}
+
+.magazine-btn {
+  font-family: TheFrontman;
+  color: black;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+}
+
+#magazine-container {
+  position: relative;
+}
+
+#magazine-overlay-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
+#magazine-overlay-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+}
+
+.user-text {
+  color: gray;
+  font-size: 15px;
+}
