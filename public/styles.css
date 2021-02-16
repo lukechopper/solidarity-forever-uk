@@ -137,7 +137,7 @@ a:active {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .iframe-container {
@@ -240,4 +240,40 @@ a:active {
 .user-text {
   color: gray;
   font-size: 15px;
+}
+
+/* loader */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+.loader {
+  border: 16px solid #000000; /* Light grey */
+  border-top: 16px solid #bdc3c7; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }

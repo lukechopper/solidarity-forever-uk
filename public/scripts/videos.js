@@ -5,6 +5,12 @@ let containerMusic = $("#music-container");
 let containerSpeeches = $("#speeches-container");
 let containerMovies = $("#movies-container");
 
+//Handle Loader
+$(window).on('load', function(){
+    $(".loader-container").addClass("hide");
+})
+
+
 function changeMusic() {
     btnText.html("Music");
     firstTitle.html("Music");
