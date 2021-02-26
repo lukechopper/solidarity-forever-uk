@@ -115,7 +115,7 @@ if(issueNum === 1){
     if(!err){
       //Reverse the array of returned messages so the newest messages appear first
       let reversedMessages = messages.reverse();
-      res.render("issue", {issue: req.params.issue, isLogged: req.user, correctMessages: reversedMessages});
+      res.render("issue", {issue: req.params.issue, isLogged: req.user, correctMessages: reversedMessages, pageNumbers: 29});
     }else{
       console.log(err)
     }

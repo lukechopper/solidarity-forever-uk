@@ -1,4 +1,5 @@
 <%- include("partials/header.ejs") -%>
+<input type="hidden" value="<%=issue%>" id="issue-num" />
 <div class="container" style="margin-top: 20px">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -12,12 +13,18 @@
         >
           Page
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a class="dropdown-item" onclick="changePageNum(1)">1</a></li>
+        <ul
+          class="dropdown-menu"
+          aria-labelledby="dropdownMenuButton"
+          style="height: 150px; overflow: auto"
+        >
+          <% for(let i = 0; i < pageNumbers; i++){ %>
           <li>
-            <a class="dropdown-item" onclick="changePageNum(2)">2</a>
+            <a class="dropdown-item" onclick="changePageNum('<%= i + 3 %>')"
+              ><%=i + 1%></a
+            >
           </li>
-          <li><a class="dropdown-item">3</a></li>
+          <% } %>
         </ul>
       </div>
     </div>
@@ -25,6 +32,9 @@
   <div class="row justify-content-center" style="margin-top: 15px">
     <div class="col-md-6">
       <div id="magazine-container">
+        <div id="magazine-loader-container" class="hide">
+          <div id="magazine-loader"></div>
+        </div>
         <div id="magazine-overlay-right" onclick="goForward()">
           <div class="magazine-overlay-child">
             <i
@@ -41,11 +51,7 @@
             ></i>
           </div>
         </div>
-        <img
-          src="images/magazine-<%=issue%>/page-<%=issue%>.png"
-          class="responsive"
-          id="magazine-image"
-        />
+        <img src="" class="responsive" id="magazine-image" />
       </div>
     </div>
   </div>
