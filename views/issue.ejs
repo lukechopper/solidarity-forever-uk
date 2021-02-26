@@ -25,8 +25,22 @@
   <div class="row justify-content-center" style="margin-top: 15px">
     <div class="col-md-6">
       <div id="magazine-container">
-        <div id="magazine-overlay-right" onclick="goForward()"></div>
-        <div id="magazine-overlay-left" onclick="goBack()"></div>
+        <div id="magazine-overlay-right" onclick="goForward()">
+          <div class="magazine-overlay-child">
+            <i
+              class="fas fa-chevron-right"
+              style="font-size: 100px; color: white"
+            ></i>
+          </div>
+        </div>
+        <div id="magazine-overlay-left" onclick="goBack()">
+          <div class="magazine-overlay-child">
+            <i
+              class="fas fa-chevron-left"
+              style="font-size: 100px; color: white"
+            ></i>
+          </div>
+        </div>
         <img
           src="images/magazine-<%=issue%>/page-<%=issue%>.png"
           class="responsive"
