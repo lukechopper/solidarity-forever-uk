@@ -1,13 +1,15 @@
 let btnText = $("#dropdownMenuButton");
 let firstTitle = $("#first-title");
 
-let containerMusic = $("#music-container");
-let containerSpeeches = $("#speeches-container");
-let containerMovies = $("#movies-container");
+let categories = {
+    music: $("#music-container"),
+    speeches: $("#speeches-container"),
+    movies: $("#movies-container")
+}
 
 //Handle Loader
 $(window).on('load', function(){
-    $(".loader-container").addClass("hide");
+    $(".absolute-container").addClass("hide");
 })
 
 
@@ -15,25 +17,50 @@ function changeMusic() {
     btnText.html("Music");
     firstTitle.html("Music");
 
-    containerMusic.removeClass("hide");
-    containerSpeeches.addClass("hide");
-    containerMovies.addClass("hide");
+    changeCategory(0);
+
+    // categories.music.removeClass("hide");
+    // categories.speeches.addClass("hide");
+    // categories.movies.addClass("hide");
 }
 
 function changeSpeeches() {
-    btnText.html("Speeches");
-    firstTitle.html("Speeches");
+    btnText.html("Talks");
+    firstTitle.html("Talks");
 
-    containerMusic.addClass("hide");
-    containerSpeeches.removeClass("hide");
-    containerMovies.addClass("hide");
+    changeCategory(1);
+
+    // categories.music.addClass("hide");
+    // categories.speeches.removeClass("hide");
+    // categories.movies.addClass("hide");
 }
 
 function changeMovies() {
     btnText.html("Movies");
     firstTitle.html("Movies");
 
-    containerMusic.addClass("hide");
-    containerSpeeches.addClass("hide");
-    containerMovies.removeClass("hide");
+    changeCategory(2);
+
+    // categories.music.addClass("hide");
+    // categories.speeches.addClass("hide");
+    // categories.movies.removeClass("hide");
 }
+
+function changeCategory(skip) {
+    let iter = 0;
+    for (let category in categories) {
+        if(skip === iter){
+            categories[category].removeClass("hide");
+        }else{
+            categories[category].addClass("hide");
+            categories[category].find("iframe").each(function() { 
+                var src= $(this).attr('src');
+                $(this).attr('src',src);  
+        });
+        }   
+        iter++;
+    }
+}
+
+
+
